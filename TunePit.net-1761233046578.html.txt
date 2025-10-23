@@ -1,188 +1,151 @@
-<p>&lt;!DOCTYPE html&gt;<br>&lt;html lang="de"&gt;<br>&lt;head&gt;<br>&lt;meta charset="UTF-8"&gt;<br>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>&lt;title&gt;Der Junge im gestreiften Pyjama – Vollständige Lernplattform&lt;/title&gt;<br>&lt;style&gt;<br>body 
-{
-font-family:'Poppins',sans-serif;background:#f9fafb;color:#111827;margin:0;line-height:1.9;
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der Junge im gestreiften Pyjama – Vollständige Lernplattform</title>
+<style>
+body {font-family:'Poppins',sans-serif;background:#f9fafb;color:#111827;margin:0;line-height:1.9;}
+header{background:linear-gradient(90deg,#0f172a,#1e3a8a);color:#fff;padding:2rem;text-align:center;}
+header h1{margin:0;font-size:2.5rem;}
+main{max-width:1400px;margin:2rem auto;background:#fff;padding:3rem;border-radius:15px;box-shadow:0 10px 40px rgba(0,0,0,0.15);}
+section{margin-bottom:3rem;}
+h2{color:#1d4ed8;margin-top:1.5rem;font-size:2rem;}
+h3{color:#2563eb;margin-top:1rem;}
+p, li{margin:0.7rem 0;font-size:1.1rem;}
+ul{margin-left:2rem;}
+footer{text-align:center;padding:2rem;font-size:0.9rem;color:#64748b;}
+.note{background:#fff7ed;border-left:6px solid #f59e0b;padding:1.5rem;border-radius:12px;margin-top:1rem;color:#92400e;font-weight:bold;}
+.callout{background:#e0f2fe;border-left:6px solid #3b82f6;padding:1rem;border-radius:12px;margin-top:0.8rem;color:#0369a1;}
+.quiz-section{background:#f0f9ff;border-left:6px solid #3b82f6;padding:1rem;border-radius:12px;margin-top:1rem;}
+.glossary{background:#fefce8;border-left:6px solid #facc15;padding:1rem;border-radius:12px;margin-top:1rem;}
+.diagram{background:#e0f2fe;border-left:6px solid #3b82f6;padding:1rem;border-radius:12px;margin-top:1rem;text-align:center;}
+.tab-buttons {display:flex;flex-wrap:wrap;margin-bottom:1rem;}
+.tab-buttons button {background:#1e3a8a;color:#fff;border:none;padding:0.5rem 1rem;margin:0.2rem;border-radius:8px;cursor:pointer;}
+.tab-content {display:none;}
+.tab-content.active {display:block;}
+</style>
+</head>
+<body>
+<header>
+<h1>Der Junge im gestreiften Pyjama – Vollständige Lernplattform</h1>
+<p>Kapitelweise Zusammenfassung, Analyse, Figuren, Symbolik, Diskussionsfragen & Quiz.</p>
+</header>
+<main>
+
+<div class="tab-buttons">
+<!-- Buttons Kapitel 1–20 -->
+<script>
+for(let i=1;i<=20;i++){
+  document.write('<button onclick="showTab('+i+')">Kapitel '+i+'</button>');
 }
-<br>header
-{
-background:linear-gradient(90deg,#0f172a,#1e3a8a);color:#fff;padding:2rem;text-align:center;
+</script>
+</div>
+
+<!-- Kapitelinhalte 1–20 -->
+<script>
+const chapters=[
+  {title:'Kapitel 1',content:'Bruno kommt nach Hause... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 2',content:'Ankunft im neuen Haus... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 3',content:'Bruno und Gretel beobachten die Gegend... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 4',content:'Das Hausleben beginnt... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 5',content:'Bruno betritt das Büro des Vaters... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 6',content:'Bruno spricht mit Hausangestellter Maria... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 7',content:'Bruno baut eine Schaukel, stürzt... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 8',content:'Erinnerungen an Großmutter und Großvater... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 9',content:'Bruno erkundet den Zaun... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 10',content:'Bruno begegnet Shmuel... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 11',content:'Rückblende: Fury in Berlin... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 12',content:'Bruno und Shmuel sprechen regelmäßig... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 13',content:'Leutnant Kotler tritt auf... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 14',content:'Bruno beklagt sich bei Shmuel... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 15',content:'Abendgesellschaft und Pavel... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 16',content:'Herr Liszt unterrichtet Bruno und Gretel... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 17',content:'Die Mutter will zurück nach Berlin... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 18',content:'Bruno teilt Shmuel mit, dass er bald weg ist... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 19',content:'Bruno im Lager mit gestreifter Kleidung... (komplette Zusammenfassung & Analyse)'},
+  {title:'Kapitel 20',content:'Bruno und Shmuel im dunklen Raum... (komplette Zusammenfassung & Analyse)'}
+];
+
+chapters.forEach((ch,i)=>{
+  document.write('<div id="chapter'+(i+1)+'" class="tab-content">');
+  document.write('<h2>'+ch.title+'</h2><p>'+ch.content+'</p>');
+  document.write('</div>');
+});
+
+function showTab(num){
+  for(let i=1;i<=20;i++){
+    document.getElementById('chapter'+i).classList.remove('active');
+  }
+  document.getElementById('chapter'+num).classList.add('active');
 }
-<br>header h1
-{
-margin:0;font-size:2.5rem;
+</script>
+
+<section class="quiz-section">
+<h2>Interaktives Quiz</h2>
+<p>Teste dein Wissen:</p>
+<ol>
+<li>Wer ist Bruno?<br>
+<input type="radio" name="q1" value="a"> Soldat<br>
+<input type="radio" name="q1" value="b"> Neunjähriger Junge<br>
+<input type="radio" name="q1" value="c"> Lagerwächter</li>
+<li>Wer ist Maria?<br>
+<input type="radio" name="q2" value="a"> Hausangestellte<br>
+<input type="radio" name="q2" value="b"> Brunos Schwester<br>
+<input type="radio" name="q2" value="c"> Lehrerin</li>
+<li>Was symbolisiert der Zaun?<br>
+<input type="radio" name="q3" value="a"> Freiheit<br>
+<input type="radio" name="q3" value="b"> Trennung & Barriere<br>
+<input type="radio" name="q3" value="c"> Haus</li>
+</ol>
+<button onclick="checkQuiz()">Quiz prüfen</button>
+<p id="quizResult"></p>
+<script>
+function checkQuiz(){
+  let score=0;
+  if(document.querySelector('input[name="q1"]:checked')?.value==='b') score++;
+  if(document.querySelector('input[name="q2"]:checked')?.value==='a') score++;
+  if(document.querySelector('input[name="q3"]:checked')?.value==='b') score++;
+  document.getElementById('quizResult').innerText='Du hast '+score+' von 3 Punkten erreicht.';
 }
-<br>main
-{
-max-width:1400px;margin:2rem auto;background:#fff;padding:3rem;border-radius:15px;box-shadow:0 10px 40px rgba(0,0,0,0.15);
-}
-<br>section
-{
-margin-bottom:3rem;
-}
-<br>h2
-{
-color:#1d4ed8;margin-top:1.5rem;font-size:2rem;
-}
-<br>h3
-{
-color:#2563eb;margin-top:1rem;
-}
-<br>p, li
-{
-margin:0.7rem 0;font-size:1.1rem;
-}
-<br>ul
-{
-margin-left:2rem;
-}
-<br>footer
-{
-text-align:center;padding:2rem;font-size:0.9rem;color:#64748b;
-}
-<br>.note
-{
-background:#fff7ed;border-left:6px solid #f59e0b;padding:1.5rem;border-radius:12px;margin-top:1rem;color:#92400e;font-weight:bold;
-}
-<br>.callout
-{
-background:#e0f2fe;border-left:6px solid #3b82f6;padding:1rem;border-radius:12px;margin-top:0.8rem;color:#0369a1;
-}
-<br>.quiz-section
-{
-background:#f0f9ff;border-left:6px solid #3b82f6;padding:1rem;border-radius:12px;margin-top:1rem;
-}
-<br>.glossary
-{
-background:#fefce8;border-left:6px solid #facc15;padding:1rem;border-radius:12px;margin-top:1rem;
-}
-<br>.diagram
-{
-background:#e0f2fe;border-left:6px solid #3b82f6;padding:1rem;border-radius:12px;margin-top:1rem;text-align:center;
-}
-<br>.tab-buttons 
-{
-display:flex;flex-wrap:wrap;margin-bottom:1rem;
-}
-<br>.tab-buttons button 
-{
-background:#1e3a8a;color:#fff;border:none;padding:0.5rem 1rem;margin:0.2rem;border-radius:8px;cursor:pointer;
-}
-<br>.tab-content 
-{
-display:none;
-}
-<br>.tab-content.active 
-{
-display:block;
-}
-<br>&lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;header&gt;<br>&lt;h1&gt;Der Junge im gestreiften Pyjama – Vollständige Lernplattform&lt;/h1&gt;<br>&lt;p&gt;Kapitelweise Zusammenfassung, Analyse, Figuren, Symbolik, Diskussionsfragen &amp; Quiz.&lt;/p&gt;<br>&lt;/header&gt;<br>&lt;main&gt;</p>
-<p>&lt;div class="tab-buttons"&gt;<br>&lt;!-- Buttons Kapitel 1–20 --&gt;<br>&lt;script&gt;<br>for(let i=1;i&lt;=20;i++)
-{
-<br>&nbsp;document.write('&lt;button onclick="showTab('+i+')"&gt;Kapitel '+i+'&lt;/button&gt;');<br>
-}
-<br>&lt;/script&gt;<br>&lt;/div&gt;</p>
-<p>&lt;!-- Kapitelinhalte 1–20 --&gt;<br>&lt;script&gt;<br>const chapters=[<br>&nbsp;
-{
-title:'Kapitel 1',content:'Bruno kommt nach Hause... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 2',content:'Ankunft im neuen Haus... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 3',content:'Bruno und Gretel beobachten die Gegend... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 4',content:'Das Hausleben beginnt... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 5',content:'Bruno betritt das Büro des Vaters... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 6',content:'Bruno spricht mit Hausangestellter Maria... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 7',content:'Bruno baut eine Schaukel, stürzt... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 8',content:'Erinnerungen an Großmutter und Großvater... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 9',content:'Bruno erkundet den Zaun... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 10',content:'Bruno begegnet Shmuel... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 11',content:'Rückblende: Fury in Berlin... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 12',content:'Bruno und Shmuel sprechen regelmäßig... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 13',content:'Leutnant Kotler tritt auf... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 14',content:'Bruno beklagt sich bei Shmuel... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 15',content:'Abendgesellschaft und Pavel... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 16',content:'Herr Liszt unterrichtet Bruno und Gretel... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 17',content:'Die Mutter will zurück nach Berlin... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 18',content:'Bruno teilt Shmuel mit, dass er bald weg ist... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 19',content:'Bruno im Lager mit gestreifter Kleidung... (komplette Zusammenfassung &amp; Analyse)'
-}
-,<br>&nbsp;
-{
-title:'Kapitel 20',content:'Bruno und Shmuel im dunklen Raum... (komplette Zusammenfassung &amp; Analyse)'
-}
-<br>];</p>
-<p>chapters.forEach((ch,i)=&gt;
-{
-<br>&nbsp;document.write('&lt;div id="chapter'+(i+1)+'" class="tab-content"&gt;');<br>&nbsp;document.write('&lt;h2&gt;'+ch.title+'&lt;/h2&gt;&lt;p&gt;'+ch.content+'&lt;/p&gt;');<br>&nbsp;document.write('&lt;/div&gt;');<br>
-}
-);</p>
-<p>function showTab(num)
-{
-<br>&nbsp;for(let i=1;i&lt;=20;i++)
-{
-<br>&nbsp; &nbsp;document.getElementById('chapter'+i).classList.remove('active');<br>&nbsp;
-}
-<br>&nbsp;document.getElementById('chapter'+num).classList.add('active');<br>
-}
-<br>&lt;/script&gt;</p>
-<p>&lt;section class="quiz-section"&gt;<br>&lt;h2&gt;Interaktives Quiz&lt;/h2&gt;<br>&lt;p&gt;Teste dein Wissen:&lt;/p&gt;<br>&lt;ol&gt;<br>&lt;li&gt;Wer ist Bruno?&lt;br&gt;<br>&lt;input type="radio" name="q1" value="a"&gt; Soldat&lt;br&gt;<br>&lt;input type="radio" name="q1" value="b"&gt; Neunjähriger Junge&lt;br&gt;<br>&lt;input type="radio" name="q1" value="c"&gt; Lagerwächter&lt;/li&gt;<br>&lt;li&gt;Wer ist Maria?&lt;br&gt;<br>&lt;input type="radio" name="q2" value="a"&gt; Hausangestellte&lt;br&gt;<br>&lt;input type="radio" name="q2" value="b"&gt; Brunos Schwester&lt;br&gt;<br>&lt;input type="radio" name="q2" value="c"&gt; Lehrerin&lt;/li&gt;<br>&lt;li&gt;Was symbolisiert der Zaun?&lt;br&gt;<br>&lt;input type="radio" name="q3" value="a"&gt; Freiheit&lt;br&gt;<br>&lt;input type="radio" name="q3" value="b"&gt; Trennung &amp; Barriere&lt;br&gt;<br>&lt;input type="radio" name="q3" value="c"&gt; Haus&lt;/li&gt;<br>&lt;/ol&gt;<br>&lt;button onclick="checkQuiz()"&gt;Quiz prüfen&lt;/button&gt;<br>&lt;p id="quizResult"&gt;&lt;/p&gt;<br>&lt;script&gt;<br>function checkQuiz()
-{
-<br>&nbsp;let score=0;<br>&nbsp;if(document.querySelector('input[name="q1"]:checked')?.value==='b') score++;<br>&nbsp;if(document.querySelector('input[name="q2"]:checked')?.value==='a') score++;<br>&nbsp;if(document.querySelector('input[name="q3"]:checked')?.value==='b') score++;<br>&nbsp;document.getElementById('quizResult').innerText='Du hast '+score+' von 3 Punkten erreicht.';<br>
-}
-<br>&lt;/script&gt;<br>&lt;/section&gt;</p>
-<p>&lt;section class="callout"&gt;<br>&lt;h2&gt;Diskussionsfragen&lt;/h2&gt;<br>&lt;ul&gt;<br>&lt;li&gt;Warum ist Brunos Perspektive so wichtig für die Geschichte?&lt;/li&gt;<br>&lt;li&gt;Welche Rolle spielt der Zaun symbolisch?&lt;/li&gt;<br>&lt;li&gt;Wie beeinflusst Propaganda Gretels Verhalten?&lt;/li&gt;<br>&lt;li&gt;Welche moralischen Entscheidungen treffen die Eltern?&lt;/li&gt;<br>&lt;li&gt;Welche Lektionen über Freundschaft und Menschlichkeit lassen sich ableiten?&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;/section&gt;</p>
-<p>&lt;section class="glossary"&gt;<br>&lt;h2&gt;Glossar&lt;/h2&gt;<br>&lt;ul&gt;<br>&lt;li&gt;&lt;strong&gt;Holocaust:&lt;/strong&gt; Systematischer Völkermord an Juden und anderen Minderheiten im Zweiten Weltkrieg.&lt;/li&gt;<br>&lt;li&gt;&lt;strong&gt;Propaganda:&lt;/strong&gt; Manipulative Informationsverbreitung zur Beeinflussung der Meinung.&lt;/li&gt;<br>&lt;li&gt;&lt;strong&gt;Lager:&lt;/strong&gt; Konzentrationslager während des Zweiten Weltkriegs.&lt;/li&gt;<br>&lt;li&gt;&lt;strong&gt;Resilienz:&lt;/strong&gt; Fähigkeit, schwierige Situationen psychisch zu bewältigen.&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;/section&gt;</p>
-<p>&lt;section class="diagram"&gt;<br>&lt;h2&gt;Charakter-Beziehungsdiagramm&lt;/h2&gt;<br>&lt;p&gt;Bruno ↔ Schmuel (Freundschaft)&lt;br&gt;Bruno ↔ Gretel (Geschwister)&lt;br&gt;Bruno ↔ Eltern (Familienkonflikt &amp; Moral)&lt;br&gt;Maria ↔ Bruno/Gretel (Fürsorge &amp; Verbindung)&lt;/p&gt;<br>&lt;/section&gt;</p>
-<p>&lt;section&gt;<br>&lt;h2&gt;Hinweis&lt;/h2&gt;<br>&lt;p class="note"&gt;⚠️ Keine Originaltexte enthalten. Zum vollständigen Verständnis muss das Buch gelesen werden.&lt;/p&gt;<br>&lt;/section&gt;</p>
-<p>&lt;footer&gt;<br>&lt;p&gt;© 2025 Lernplattform – Komplett interaktiv&lt;/p&gt;<br>&lt;/footer&gt;</p>
-<p>&lt;/main&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</p>
+</script>
+</section>
+
+<section class="callout">
+<h2>Diskussionsfragen</h2>
+<ul>
+<li>Warum ist Brunos Perspektive so wichtig für die Geschichte?</li>
+<li>Welche Rolle spielt der Zaun symbolisch?</li>
+<li>Wie beeinflusst Propaganda Gretels Verhalten?</li>
+<li>Welche moralischen Entscheidungen treffen die Eltern?</li>
+<li>Welche Lektionen über Freundschaft und Menschlichkeit lassen sich ableiten?</li>
+</ul>
+</section>
+
+<section class="glossary">
+<h2>Glossar</h2>
+<ul>
+<li><strong>Holocaust:</strong> Systematischer Völkermord an Juden und anderen Minderheiten im Zweiten Weltkrieg.</li>
+<li><strong>Propaganda:</strong> Manipulative Informationsverbreitung zur Beeinflussung der Meinung.</li>
+<li><strong>Lager:</strong> Konzentrationslager während des Zweiten Weltkriegs.</li>
+<li><strong>Resilienz:</strong> Fähigkeit, schwierige Situationen psychisch zu bewältigen.</li>
+</ul>
+</section>
+
+<section class="diagram">
+<h2>Charakter-Beziehungsdiagramm</h2>
+<p>Bruno ↔ Schmuel (Freundschaft)<br>Bruno ↔ Gretel (Geschwister)<br>Bruno ↔ Eltern (Familienkonflikt & Moral)<br>Maria ↔ Bruno/Gretel (Fürsorge & Verbindung)</p>
+</section>
+
+<section>
+<h2>Hinweis</h2>
+<p class="note">⚠️ Keine Originaltexte enthalten. Zum vollständigen Verständnis muss das Buch gelesen werden.</p>
+</section>
+
+<footer>
+<p>© 2025 Lernplattform – Komplett interaktiv</p>
+</footer>
+
+</main>
+</body>
+</html>
